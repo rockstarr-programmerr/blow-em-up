@@ -10,6 +10,10 @@ function randomNumber(from, to) {
 	return randNum;
 }
 
+function addThousandSeparator(number) {
+	return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+}
+
 // Create Target class (with method of getAttacked) then initiate school and workplace object
 function Target(name, health, destroyStatus) {
 	this.name = name;
@@ -58,8 +62,6 @@ function Target(name, health, destroyStatus) {
 					}, 700);
 				}
 			}
-			console.log('target down: ' + targetDestroyed);
-			console.log('amo out: ' + amoOut);
 		}
 
 		// Generate attack damage (with some random fluctuation) and attack accuracy:
@@ -150,7 +152,7 @@ function Target(name, health, destroyStatus) {
 		$('#id-' + attWeap.objectName).text('x' + attWeap.amo);
 
 		// Show how much was the damage:
-		$('.' + this.name + '-health-minus').text('-' + attDam + 'HP').animate({
+		$('.' + this.name + '-health-minus').text('-' + addThousandSeparator(attDam) + ' HP').animate({
 			opacity: 1,
 			height: '50px'
 		}, 200).delay(400).animate({
@@ -160,7 +162,7 @@ function Target(name, health, destroyStatus) {
 
 		// Show less health for target:
 		if (this.health >= 0) {
-			$('#' + this.name + '-health').text(this.health);
+			$('#' + this.name + '-health').text(addThousandSeparator(this.health));
 		} else if (this.health < 0) {
 			$('#' + this.name + '-health').text('0');
 		}
@@ -244,17 +246,11 @@ function Target(name, health, destroyStatus) {
 		}
 
 		checkWinLose();
-
-		// // Console test
-		// console.log(targetDestroyed, amoOut);
-		// console.log(this.name, this.health, this.destroyStatus);
-		// console.log(attWeap.name, attWeap.amo);
-		// console.log(attAcc);
 	}
 }
 
-let school = new Target('school', 1, false);
-let workplace = new Target('workplace', 1, false);
+let school = new Target('school', 10000, false);
+let workplace = new Target('workplace', 12000, false);
 
 // Delay executing the functions so that the animation can be completed before the function's result show up
 let timedAttack;

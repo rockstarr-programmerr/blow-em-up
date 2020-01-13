@@ -296,3 +296,33 @@ $('.mute-sound').click(function() {
 		}
 	}
 });
+
+// Highlight selected divs
+$('body').on('mouseenter', '.focus-on-hover, .player-container', function() {
+	$(this).css({
+		'box-shadow': '0 0 3px 2px #fff'
+	})
+}).on('mouseleave', '.focus-on-hover, .player-container', function() {
+	var $this = $(this);
+	if (!$this.hasClass('selected')) {
+		$this.css({
+			'box-shadow': 'initial'
+		})
+	}
+})
+
+$('.arsenal-container').on('click', '.focus-on-hover', function() {
+	$('.arsenal-container .focus-on-hover').removeClass('selected').css({
+		'box-shadow': 'initial'
+	})
+
+	$(this).addClass('selected').css({
+		'box-shadow': '0 0 3px 2px #fff'
+	})
+})
+
+$('.workplace-container, .school-container').hover(function() {
+	$(this).animate({opacity: '0.9'}, 'fast')
+}, function() {
+	$(this).animate({opacity: '1'}, 'fast')
+})

@@ -74,7 +74,7 @@ function Player(name, budget, arsenal) {
 				this.arsenal.push(clickedWeapon);
 				this.budget -= clickedWeapon.price;
 				adjustedBudget = this.budget;
-				$('.arsenal-container').append('<div style="opacity: 0;" class="arsenal-weapon"><div class="arsenal-weapon-img"><img onclick="' + clickedWeapon.objectName + '.attack()" src="' + clickedWeapon.imgUrl + '"></div><div class="arsenal-weapon-amo"><p>Amo</p><p id="id-' + chosenWeapon + '">x' + clickedWeapon.amo + '</p></div></div>');
+				$('.arsenal-container').append('<div style="opacity: 0;" class="arsenal-weapon focus-on-hover"><div class="arsenal-weapon-img"><img onclick="' + clickedWeapon.objectName + '.attack()" src="' + clickedWeapon.imgUrl + '"></div><div class="arsenal-weapon-amo"><p>Amo</p><p id="id-' + chosenWeapon + '">x' + clickedWeapon.amo + '</p></div></div>');
 				$('.arsenal-weapon').delay(300).animate({
 					opacity: 1
 				}, 1);
@@ -82,7 +82,7 @@ function Player(name, budget, arsenal) {
 		}
 
 		// Show the remaining money
-		$('.player-available-budget').text('Your budget: $' + this.budget); // Change later at animation stage
+		$('.player-available-budget').text('Your budget: $' + addThousandSeparator(this.budget)); // Change later at animation stage
 	};
 }
 
