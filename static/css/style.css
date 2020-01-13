@@ -1,0 +1,679 @@
+body {
+	background-color: #2F4F4F;
+}
+
+.game-container {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 768px;
+	background-color: #2F4F4F;
+	border: 4px solid #fff;
+	z-index: 1;
+	overflow: hidden;
+}
+
+.workplace-container {
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 320px;
+	width: 200px;
+	height: 200px;/*
+	border: 1px solid #fff;*/
+	z-index: 2;
+}
+
+.school-container {
+	display: block;
+	position: absolute;
+	top: 50px;
+	left: 720px;
+	width: 200px;
+	height: 200px;/*
+	border: 1px solid #fff;*/
+	z-index: 2;
+}
+
+.workplace-img-container {
+	display: block;
+	width: 100%;
+	height: 150px;/*
+	border: 1px solid #fff;*/
+	background-image: url('../img/targets/office.png');
+	background-size: 75%;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer;
+}
+
+.school-img-container {
+	display: block;
+	width: 100%;
+	height: 150px;/*
+	border: 1px solid #fff;*/
+	background-image: url('../img/targets/school.png');
+	background-size: 75%;
+	background-repeat: no-repeat;
+	background-position: center;
+	cursor: pointer; 
+}
+
+.workplace-stats, .school-stats {
+	display: block;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 50px;
+}
+
+.workplace-health-minus, .school-health-minus {
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	left: 100px;
+	top: 210px;
+	width: 70px;
+	height: 0;
+	z-index: 3;
+}
+
+/* ========================================================================================================= */
+
+.store-container {
+	display: block;
+	position: absolute;
+	top: 300px;
+	left: 0;
+	width: 250px;
+	height: 400px;
+	border: 1px solid #fff;
+	z-index: 2;
+}
+
+.no-budget-hint {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 247px;
+	width: 0;
+	height: 80px;
+	overflow: hidden;
+	border: 1px solid #fff;
+}
+
+.store-ak47, .store-dragunov, .store-mp5, .store-rpg, .store-tomahawk {
+	display: block;
+	position: relative;
+	width: 100%;
+	height: 80px;
+	border: 1px solid #fff;
+	z-index: 3;
+}
+
+.store-ak47-img, .store-dragunov-img, .store-mp5-img, .store-rpg-img, .store-tomahawk-img {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100px;
+	height: 100%;
+	z-index: 4;
+	cursor: pointer;
+	background-size: 90%;
+	background-repeat: no-repeat;
+	background-position: center; 
+}
+
+.store-ak47-img {
+	background-image: url('../img/weapons/ak47.png');
+}
+
+.store-dragunov-img {
+	background-image: url('../img/weapons/dragunov.png');
+}
+
+.store-mp5-img {
+	background-image: url('../img/weapons/mp5.png');
+	background-size: 80%;
+}
+
+.store-rpg-img {
+	background-image: url('../img/weapons/rpg.png');
+}
+
+.store-tomahawk-img {
+	background-image: url('../img/weapons/tomahawk.png');
+	background-size: 70%;
+}
+
+/* ===================================================== */
+
+.store-ak47-stats, .store-dragunov-stats, .store-mp5-stats, .store-rpg-stats, .store-tomahawk-stats  {
+	display: block;
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 150px;
+	height: 100%;
+	z-index: 4;
+}
+
+.store-stats {
+	display: block;
+	position: relative;
+	color: #fff;
+	font-size: 13px;
+	font-family: arial;
+	line-height: 16px;
+}
+
+.store-sign {
+	display: block;
+	position: absolute;
+	top: -50px;
+	left: 0;
+	width: 100px;
+	height: 50px;
+	border: 1px solid #fff;
+	color: #fff;
+	text-align: center;
+	font-size: 16px;
+	font-family: arial;
+	line-height: 50px;
+}
+
+/* Arsenal ============================================================================================ */
+
+.arsenal-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	position: absolute;
+	top: 550px;
+	left: 300px;
+	width: 375px;
+	height: 150px;
+	border: 1px solid #fff;
+}
+
+.arsenal-weapon {
+	display: block;
+	flex-basis: 20%;
+	width: 75px;
+	height: 100%;
+	border: 1px solid #fff;
+}
+
+.arsenal-weapon-img, .arsenal-weapon-amo {
+	display: block;
+	width: 100%;
+	height: 50%;
+	border: 1px solid #fff;
+	font-size: 14px;
+	font-family: arial;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+}
+
+.arsenal-weapon-img img {
+	width: 100%;
+	cursor: pointer;
+}
+
+.arsenal-weapon-amo {
+	font-size: 14px;
+	font-family: arial;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	padding-top: 10px;
+}
+
+/* Player ===============================================================================================*/
+
+.player-container {
+	display: block;
+	position: absolute;
+	top: 550px;
+	left: 700px;
+	width: 200px;
+	height: 150px;
+	border: 1px solid #fff;
+}
+
+.player-img, .player-name, .player-budget {
+	display: block;
+	position: absolute;
+	top: 0;
+	width: 100px;
+	height: 75px;
+	border: 1px solid #fff;
+}
+
+.player-img {
+	left: 0;
+	background-image: url('../img/you.png');
+	background-size: 70%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.player-name {
+	right: 0;
+}
+
+.player-budget {
+	top: 75px;
+	width: 100%;
+}
+
+/* Out of amo box ======================================================= */
+
+.out-of-amo, .target-destroyed, .you-missed, .you-missed-extra {
+	position: absolute;
+	top: 300px;
+	right: -278px;
+	width: 274px;
+	height: 100px;
+	border: 1px solid #fff;
+	font-family: arial;
+	font-size: 16px;
+	color: #fff;
+	line-height: 100px;
+	opacity: 0;
+}
+
+/* Start game */
+
+.before-start {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 1024px;
+	height: 768px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	border-radius: 10px;
+	z-index: 20;
+	background-image: url(../img/result-background.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: #2F4F4F;
+	font-size: 40px;
+	line-height: 50px;
+}
+
+#start-game-screen, #before-start-game-screen {
+	opacity: 0;
+	top: -500px;
+}
+
+#start-game-btn, #before-start-game-btn {
+	transition: all ease-in-out 200ms;
+}
+
+#start-game-btn:hover, #before-start-game-btn:hover {
+	opacity: 0.8;
+}
+
+/* Result box ==================================================================*/
+
+.result {
+	display: flex;
+	flex-flow: column wrap;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	height: 500px;
+	position: absolute;
+	left: 200px;
+	top: 150px;
+	border-radius: 10px;
+	z-index: 20;
+	background-image: url(../img/result-background.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	color: #2F4F4F;
+	font-size: 40px;
+	line-height: 50px;
+}
+
+#result-lose, #result-fake-win, #result-real-win {
+	opacity: 0;
+	top: -500px;
+}
+
+#real-win-congratulation, .start-game-rule {
+	padding: 20px 20px 0 20px;
+	font-size: 20px;
+	line-height: 26px;
+}
+
+.start-game-rule a {
+	color: #f2f2f2;
+	text-decoration: none;
+}
+
+.result-img {
+	margin-top: 20px;
+	width: 120px;
+	height: 120px;
+	z-index: 30;
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.result-img-fake-win {
+	background-image: url(../img/sad-face-fake-win.png);
+}
+
+.result-img-lose {
+	background-image: url(../img/sad-face-lose.png);
+}
+
+.result-img-real-win {
+	margin-top: 0;
+	position: relative;
+	right: 180px;
+	background-image: url(../img/happy-face-real-win.png);
+	background-size: contain;
+}
+
+.play-again-btn {
+	position: absolute;
+	bottom: 56px;
+	width: 98px;
+	height: 36px;
+	font-size: 16px;
+	line-height: 36px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 4px;
+	cursor: pointer;
+	opacity: 0.9;
+	z-index: 40;
+	transition: all ease-in-out 200ms;
+}
+
+.play-again-btn a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.play-again-btn:hover {
+	opacity: 0.7;
+}
+
+/* Game container blocker */
+#game-container-block {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 768px;
+	background-color: #111;
+	z-index: 19;
+	opacity: 0.6;
+}
+
+#before-window-load-block {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1024px;
+	height: 768px;
+	background-color: #000;
+	opacity: 0.8;
+	z-index: 1000;
+}
+
+#before-window-load-block p {
+	color: #fff;
+	font-size: 24px;
+	line-height: 768px;
+}
+
+/* Mercy part  ======================================================================= */
+
+#mercy-1-box, #mercy-2-box {
+	position: absolute;
+	display: none;
+	justify-content: space-between;
+	top: 480px;
+	left: 300px;
+	width: 375px;
+	height: 60px;
+	color: #fff;
+	font-family: arial;
+	font-size: 16px;
+	text-align: center;
+	line-height: 24px;
+	z-index: 20;
+}
+
+#mercy-1-option-1, #mercy-1-option-2, #mercy-2-option-1 {
+	width: 185px;
+	float: left;
+	margin: 0 1px;
+	display: flex;
+	align-items: center;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	cursor: pointer;
+}
+
+#mercy-2-option-2 {
+	width: 185px;
+	float: left;
+	margin: 0 1px;
+	border: 1px solid #fff;
+	border-radius: 6px;
+	cursor: pointer;
+	height: 50px;
+	line-height: 50px;
+}
+
+#mercy-1-option-1:hover, #mercy-1-option-2:hover, #mercy-2-option-1:hover, #mercy-2-option-2:hover {
+	opacity: 0.8;
+}
+
+/* Blocker */
+.blocker {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0;
+	width: 1024px;
+	height: 768px;
+	z-index: 19;
+}
+
+/* Fire ball */
+.fire-ball-workplace-1, .fire-ball-workplace-2, .fire-ball-workplace-3, .fire-ball-school-1, .fire-ball-school-2, .fire-ball-school-3, .big-explosion-workplace, .big-explosion-school, .nuclear-explosion-workplace, .nuclear-explosion-school {
+	display: none;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background-image: url(../img/animation/fireball.png);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+}
+
+.big-explosion-workplace, .big-explosion-school {
+	background-image: url(../img/animation/big-explosion.png);
+	width: 120px;
+	height: 120px;
+}
+
+.nuclear-explosion-workplace, .nuclear-explosion-school {
+	background-image: url(../img/animation/nuclear-explosion.png);
+	width: 180px;
+	height: 180px;
+}
+
+.big-explosion-workplace {
+	top: 90px;
+	left: 360px;
+}
+
+.nuclear-explosion-workplace {
+	top: 20px;
+	left: 340px;
+}
+
+.big-explosion-school {
+	top: 100px;
+	left: 770px;
+}
+
+.nuclear-explosion-school {
+	top: 20px;
+	left: 740px;
+}
+
+.fire-ball-workplace-1 {
+	top: 120px;
+	left: 380px;
+}
+
+.fire-ball-workplace-2 {
+	top: 60px;
+	left: 340px;
+}
+
+.fire-ball-workplace-3 {
+	top: 50px;
+	left: 430px;
+}
+
+.fire-ball-school-1 {
+	top: 120px;
+	left: 790px;
+}
+
+.fire-ball-school-2 {
+	top: 70px;
+	left: 730px;
+}
+
+.fire-ball-school-3 {
+	top: 50px;
+	left: 840px;
+}
+
+/* Burning down! =================== */
+
+.burning-1-workplace, .burning-2-workplace, .burning-3-workplace, .base-fire-workplace, .burning-1-school, .burning-2-school, .burning-3-school, .base-fire-school {
+	display: none;
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	background-image: url(../img/animation/burning-1.gif);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+}
+
+.burning-1-workplace {
+	top: -10px;
+	left: 20px;
+}
+
+.burning-2-workplace {
+	top: -30px;
+	left: 90px;
+}
+
+.burning-3-workplace {
+	top: 20px;
+	left: 60px;
+}
+
+.base-fire-workplace {
+	background-image: url(../img/animation/base-fire.gif);
+	background-size: 100%;
+	width: 130px;
+	height: 130px;
+	top: 25px;
+	left: 35px;
+}
+
+.burning-1-school {
+	top: 15px;
+	left: 5px;
+}
+
+.burning-2-school {
+	top: -5px;
+	left: 115px;
+}
+
+.burning-3-school {
+	top: 30px;
+	left: 65px;
+}
+
+.base-fire-school {
+	background-image: url(../img/animation/base-fire.gif);
+	background-size: 100%;
+	width: 140px;
+	height: 140px;
+	top: 20px;
+	left: 30px;
+}
+
+.dust-cloud-workplace, .dust-cloud-school {
+	display: none;
+	position: absolute;
+	top: -90px;
+	left: -40px;
+	width: 160%;
+	height: 160%;
+	background-image: url(../img/animation/dust-cloud.png);
+	background-size: 100%;
+	background-position: center;
+	background-repeat: no-repeat;
+	z-index: 10;
+}
+
+.dust-cloud-school {
+	left: -60px;
+}
+
+/* Sound */
+.mute-sound {
+	display: none;
+	position: absolute;
+	top: 165px;
+	left: 200px;
+	width: 50px;
+	height: 30px;
+	z-index: 100;
+	cursor: pointer;
+	transition: all ease-in-out 200ms;
+}
+
+.mute-sound:hover {
+	opacity: 0.8;
+}
+
+.mute-sound i {
+	font-size: 24px;
+	color: #2F4F4F;
+}
+

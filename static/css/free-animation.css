@@ -1,0 +1,86 @@
+.flying-ak47, .flying-dragunov, .flying-mp5, .flying-rpg, .flying-tomahawk {
+	opacity: 0;
+	position: absolute;
+	left: -100px;
+	width: 100px;
+	height: 78px;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 10; 
+}
+
+.flying-ak47 {
+	top: 300px;
+	background-image: url('../img/weapons/ak47.png');
+	background-size: 90%;
+}
+
+.flying-dragunov {
+	top: 400px;
+	background-image: url('../img/weapons/dragunov.png');
+	background-size: 90%;
+}
+
+.flying-mp5 {
+	top: 500px;
+	background-image: url('../img/weapons/mp5.png');
+	background-size: 80%;
+}
+
+.flying-rpg {
+	top: 600px;
+	background-image: url('../img/weapons/rpg.png');
+	background-size: 90%;
+}
+
+.flying-tomahawk {
+	top: 700px;
+	background-image: url('../img/weapons/tomahawk.png');
+	background-size: 70%;
+}
+
+/* ================================================================================================== */
+
+.ak47-bullet, .dragunov-bullet, .mp5-bullet, .rpg-bullet, .tomahawk-bullet {
+	opacity: 0;
+	position: absolute;
+	left: -50px;
+	width: 40px;
+	height: 40px;
+	background-repeat: no-repeat;
+	background-position: center;
+	z-index: 21; 
+}
+
+.ak47-bullet {
+	background-image: url('../img/weapons/ak47-bullet.png');
+	background-size: 90%;
+	transform: rotate(-90deg);
+}
+
+.dragunov-bullet {
+	background-image: url('../img/weapons/dragunov-bullet.png');
+	background-size: 90%;
+}
+
+.mp5-bullet {
+	background-image: url('../img/weapons/mp5-bullet.png');
+	background-size: 90%;
+	transform: rotate(90deg);
+}
+
+.rpg-bullet {
+	width: 80px;
+	height: 80px;
+	background-image: url('../img/weapons/rpg-bullet.png');
+	background-size: 100%;
+	transform: rotate(-45deg);
+}
+
+.tomahawk-bullet {
+	width: 100px;
+	height: 100px;
+	background-image: url('../img/weapons/tomahawk-bullet.png');
+	background-size: 100%;
+	transform: rotate(45deg);
+}
