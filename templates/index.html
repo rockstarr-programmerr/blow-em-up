@@ -1,0 +1,305 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Load static Django-style -->
+    {% load static %}
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="description" content="A game where you relief your stress of school or work place, and learn a valuable life lesson along the way, very educational game">
+    <meta keywords="game, stress, relief, school, workplace, education">
+    <meta author="TtheTtruth">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="{% static 'img/ak47.ico' %}">
+
+    <!-- Bootstrap CSS, Font awesome -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+    <title>Blow 'em up</title>
+
+    <!-- Our styling -->
+    <link rel="stylesheet" href="{% static 'css/reset-stylesheet.css' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/free-animation.css' %}">
+
+    <!-- Our sounds -->
+    <audio src="{% static 'sound/sound-start-game.mp3' %}" id="sound-start-game"></audio>
+    <audio src="{% static 'sound/sound-ak47-shot.mp3' %}" id="sound-ak47-shot"></audio>
+    <audio src="{% static 'sound/sound-mp5-shot.mp3' %}" id="sound-mp5-shot"></audio>
+    <audio src="{% static 'sound/sound-dragunov-shot-explosion.mp3' %}" id="sound-dragunov-shot-explosion"></audio>
+    <audio src="{% static 'sound/sound-rpg-shot.mp3' %}" id="sound-rpg-shot"></audio>
+    <audio src="{% static 'sound/sound-tomahawk-shot.mp3' %}" id="sound-tomahawk-shot"></audio>
+    <audio src="{% static 'sound/sound-gun-reload.mp3' %}" id="sound-gun-reload"></audio>
+    <audio src="{% static 'sound/sound-empty-reload.mp3' %}" id="sound-empty-reload"></audio>
+    <audio src="{% static 'sound/sound-rpg-explosion.mp3' %}" id="sound-rpg-explosion"></audio>
+    <audio src="{% static 'sound/sound-tomahawk-explosion.mp3' %}" id="sound-tomahawk-explosion"></audio>
+    <audio src="{% static 'sound/sound-buying.mp3' %}" id="sound-buying"></audio>
+    <audio src="{% static 'sound/sound-no-money.mp3' %}" id="sound-no-money"></audio>
+    <audio src="{% static 'sound/sound-school-fall.mp3' %}" id="sound-school-fall"></audio>
+    <audio src="{% static 'sound/sound-workplace-fall.mp3' %}" id="sound-workplace-fall"></audio>
+    <audio src="{% static 'sound/sound-fire-1.mp3' %}" id="sound-fire-1"></audio>
+    <audio src="{% static 'sound/sound-fire-2.mp3' %}" id="sound-fire-2"></audio>
+    <audio src="{% static 'sound/sound-clock-ticking.mp3' %}" id="sound-clock-ticking"></audio>
+    <audio src="{% static 'sound/sound-background.mp3' %}" id="sound-background"></audio>
+    <audio src="{% static 'sound/sound-real-win.mp3' %}" id="sound-real-win"></audio>
+    <audio src="{% static 'sound/sound-lose.mp3' %}" id="sound-lose"></audio>
+
+  </head>
+  <body>
+    <!-- Iniitial block so that page have time to load -->
+    <div id="before-window-load-block">
+      <p class="text-center">Game loading...</p>
+    </div>
+    
+    <!-- Mute sound button -->
+    <div class="mute-sound text-center m-0 p-0">
+      <i id="sound-button" class="fas fa-volume-up"></i>
+    </div>
+    <!-- Start game screen -->
+    <div id="before-start-game-screen" class="before-start font-weight-bold">
+      <p class="text-center">Blow up your school <br> (and your office too if you have job)</p>
+      <p class="start-game-rule">- A game by Tthe Ttruth -</p>
+      <p style="display: block; width: 100%; padding: 20px 20px 0 0; font-size: 20px; text-align: center; line-height: 26px;"></p>
+      <div id="before-start-game-btn" class="play-again-btn text-center" style="position: relative; bottom: -20px;">Start...</div>
+    </div>
+
+    <div id="start-game-screen" class="result font-weight-bold">
+      <p>Welcome comrade !</p>
+      <p class="start-game-rule">
+        Are you tired of your teachers?
+        <br>
+        Maybe you're tired of your boss too?
+        <br>
+        Then you've come to the right place, friend
+      </p>
+      <p class="start-game-rule">
+        Rule is simple:
+        <br>
+        &#8226; Buy guns
+        <br>
+        &#8226; Blow up places you hate
+      </p>
+      <p style="display: block; width: 100%; padding: 20px 20px 0 0; font-size: 20px; text-align: center; line-height: 26px;"></p>
+      <div id="start-game-btn" class="play-again-btn text-center" style="position: relative; bottom: 0;">Play now !</div>
+      <p class="start-game-rule" style="text-align: left; font-size: 14px; color: #f2f2f2; opacity: 0.9;">
+        Music credit: <br>
+        &#8226; Sound effects on <a href="https://freesound.org/" target="_blank">freesound.org</a> <br>
+        &#8226; <a href="https://youtu.be/eBhh23-paLU" target="_blank">Bandit Radio - S.T.A.L.K.E.R. Clear Sky</a> <br>
+        &#8226; <a href="https://youtu.be/JsCfAmCpVrE" target="_blank">DJ Blyatman - Tsar Bomba</a>
+      </p>
+    </div>
+
+    <!-- GAME -->
+    <div class="game-container">
+
+      <!-- Targets section -->
+      <div class="workplace-container">
+        <div class="workplace-animation"></div>
+        <div class="workplace-img-container">
+          <div class="burning-1-workplace"></div>
+          <div class="burning-2-workplace"></div>
+          <div class="burning-3-workplace"></div>
+          <div class="base-fire-workplace"></div>
+          <div class="dust-cloud-workplace"></div>
+        </div>
+        <div class="workplace-stats text-center">
+          <p style="line-height: 26px; font-family: arial, font-size: 16px; color: #fff;">Workplace <br> Health: <span id="workplace-health">10000</span>HP</p>
+        </div>
+        <div class="workplace-health-minus" style="line-height: 26px; font-family: arial, font-size: 16px; color: #fff;"></div>
+      </div>
+      <div class="school-container">
+        <div class="school-animation"></div>
+        <div class="school-img-container">
+          <div class="burning-1-school"></div>
+          <div class="burning-2-school"></div>
+          <div class="burning-3-school"></div>
+          <div class="base-fire-school"></div>
+          <div class="dust-cloud-school"></div>
+        </div>
+        <div class="school-stats text-center">
+          <p style="line-height: 26px; font-family: arial, font-size: 16px; color: #fff;">School <br> Health: <span id="school-health">12000</span>HP</p>
+        </div>
+        <div class="school-health-minus" style="line-height: 26px; font-family: arial, font-size: 16px; color: #fff;"></div>
+      </div>
+
+      <!-- Gun shop section -->
+      <div class="store-container">
+        <div class="store-sign">
+          <p>Gun shop</p>
+        </div>
+        <div class="no-budget-hint text-center">
+          <p style="line-height: 80px; font-family: arial, font-size: 16px; color: #fff;">No money, no weapon...</p>
+        </div>
+        <div class="store-ak47">
+          <div class="store-ak47-img"></div>
+          <div class="store-ak47-stats">
+            <div class="store-stats">
+              <p>Name: &emsp; &emsp; <em>AK47</em></p>
+              <p>Damage: &emsp; <em>400 HP</em></p>
+              <p>Accuracy: &emsp; <em>80%</em></p>
+              <p>Amunitions: &nbsp; <em>7</em></p>
+              <p>Price: &emsp; <em>$5.000</em></p>
+            </div>
+          </div>
+        </div>
+        <div class="store-dragunov">
+          <div class="store-dragunov-img"></div>
+          <div class="store-dragunov-stats">
+            <div class="store-stats">
+              <p>Name: &emsp; &ensp; <em>Dragunov</em></p>
+              <p>Damage: &emsp; <em>600 HP</em></p>
+              <p>Accuracy: &emsp; <em>75%</em></p>
+              <p>Amunitions: &nbsp; <em>5</em></p>
+              <p>Price: &emsp; <em>$7.500</em></p>
+            </div>
+          </div>
+        </div>
+        <div class="store-mp5">
+          <div class="store-mp5-img"></div>
+          <div class="store-mp5-stats">
+            <div class="store-stats">
+              <p>Name: <em>Western spy's gun</em></p>
+              <p>Damage: &emsp; <em>200 HP</em></p>
+              <p>Accuracy: &emsp; <em>95%</em></p>
+              <p>Amunitions: &nbsp; <em>10</em></p>
+              <p>Price: &emsp; <em>$3.000</em></p>
+            </div>
+          </div>
+        </div>
+        <div class="store-rpg">
+          <div class="store-rpg-img"></div>
+          <div class="store-rpg-stats">
+            <div class="store-stats">
+              <p>Name:  &emsp; <em>Russian RPG</em></p>
+              <p>Damage: &emsp; <em>1000 HP</em></p>
+              <p>Accuracy: &emsp; <em>80%</em></p>
+              <p>Amunitions: &nbsp; <em>4</em></p>
+              <p>Price: &emsp; <em>$9.000</em></p>
+            </div>
+          </div>
+        </div>
+        <div class="store-tomahawk">
+          <div class="store-tomahawk-img"></div>
+          <div class="store-tomahawk-stats">
+            <div class="store-stats">
+              <p>Name: <em>Tomahawk missile</em></p>
+              <p>Damage: &emsp; <em>2000 HP</em></p>
+              <p>Accuracy: &emsp; <em>70%</em></p>
+              <p>Amunitions: &nbsp; <em>2</em></p>
+              <p>Price: &emsp; <em>$10.000</em></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Arsenal section -->
+      <div class="arsenal-container"></div>
+
+      <!-- Player section -->
+      <div class="player-container">
+        <div class="player-img"></div>
+        <div class="player-name text-center"><p style="line-height: 75px; color: #fff; font-size: 16px; font-family: arial;"><b>You</b></p></div>
+        <div class="player-budget text-center"><p class="player-available-budget" style="line-height: 75px; color: #fff; font-size: 16px; font-family: arial;">Your budget: $70.000</p></div>
+      </div>
+
+      <!-- Out of amo box -->
+      <div class="out-of-amo text-center">You're out of amunitions !</div>
+      <div class="target-destroyed text-center">The target is already destroyed urod !</div>
+      <div class="you-missed text-center">You missed !</div>
+      <div class="you-missed-extra text-center" style="line-height: 24px; padding: 22px;">(But you still lose your amo) <br> #life</div>
+
+      <!-- Chance for mercy section -->
+      <div id="mercy-1-box">
+        <div id="mercy-1-option-1">
+          <p style="margin: 0 auto;">Speed up the rocket,<br>kill 'em !</p>
+        </div>
+        <div id="mercy-1-option-2">
+          <p>Oh no I changed my mind. Stop the rocket !</p>
+        </div>
+      </div>
+
+      <div id="mercy-2-box">
+        <div id="mercy-2-option-1">
+          <p style="margin: 0 auto;">Nah just kidding.<br>Blow them up ! </p>
+        </div>
+        <div id="mercy-2-option-2">
+          <p>Withdraw the rocket.</p>
+        </div>
+      </div>
+
+      <!-- Game field blocker -->
+      <div class="blocker"></div>
+
+      <!-- Free objects animations -->
+      <div class="flying-ak47"></div>
+      <div class="flying-dragunov"></div>
+      <div class="flying-mp5"></div>
+      <div class="flying-rpg"></div>
+      <div class="flying-tomahawk"></div>
+
+      <div class="ak47-bullet"></div>
+      <div class="dragunov-bullet"></div>
+      <div class="mp5-bullet"></div>
+      <div class="rpg-bullet"></div>
+      <div class="tomahawk-bullet"></div>
+
+      <div class="fire-ball-workplace-1"></div>
+      <div class="fire-ball-workplace-2"></div>
+      <div class="fire-ball-workplace-3"></div>
+
+      <div class="fire-ball-school-1"></div>
+      <div class="fire-ball-school-2"></div>
+      <div class="fire-ball-school-3"></div>
+
+      <div class="big-explosion-workplace"></div>
+      <div class="big-explosion-school"></div>
+      <div class="nuclear-explosion-workplace"></div>
+      <div class="nuclear-explosion-school"></div>
+
+    </div>
+    
+    <!-- Win/lose status box -->
+    <div id="game-container-block"></div>
+    <div id="result-fake-win" class="result text-center font-weight-bold">
+      <p> All target destroyed, but you still lose anyway...</p>
+      <div class="result-img result-img-fake-win"></div>
+      <div class="play-again-btn"><a href="">Play again</a></div>
+    </div>
+    <div id="result-lose" class="result text-center font-weight-bold" style="font-size: 35px;">
+      <p> You've ran out of all amunitions. Game over!</p>
+      <div class="result-img result-img-lose"></div>
+      <div class="play-again-btn"><a href="">Play again</a></div>
+    </div>
+    <div id="result-real-win" class="result text-center font-weight-bold">
+      <p>YOU WON !!</p>
+      <p id="real-win-congratulation">If you look into here to find the solution for the game, go away. Play it the right way, have fun, don't cheat.</p>
+      <p style="display: block; width: 100%; padding: 20px 20px 0 0; font-size: 20px; text-align: right; line-height: 26px;">See you next time!<br>- A game by Tthe Ttruth -</p>
+      <div class="result-img result-img-real-win"></div>
+      <div class="play-again-btn"><a href="">Play again</a></div>
+    </div>
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+    <!-- More jQuery because slim jQuery is not enough for our badass animations -->
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- Our awesome JavaScript -->
+    <script src="{% static 'js/weapon.js' %}"></script>
+    <script src="{% static 'js/target.js' %}"></script>
+    <script src="{% static 'js/player.js' %}"></script>
+    <script src="{% static 'js/gameplay.js' %}"></script>
+    <script src="{% static 'js/animation.js' %}"></script>
+
+  </body>
+</html>
