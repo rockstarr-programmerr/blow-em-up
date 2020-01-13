@@ -23,19 +23,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ['BLOW_EM_UP_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['tthettruth.pythonanywhere.com']
 
 
 # Application definition
 
 INSTALLED_APPS = [
-    #'django.contrib.admin',
-    # 'django.contrib.auth',
-    # 'django.contrib.contenttypes',
-    #'django.contrib.sessions',
-    #'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
 
