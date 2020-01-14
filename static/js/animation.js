@@ -312,6 +312,16 @@ $('body').on('mouseenter', '.focus-on-hover, .player-container', function() {
 })
 
 $('.arsenal-container').on('click', '.focus-on-hover', function() {
+	var weaponName = $(this).find('.arsenal-weapon-amo p[id]')[0].id.split('-')[1];
+	for (let weapon of weaponArray) {
+		if (weapon.objectName === weaponName) {
+			var amo = weapon.amo;
+			if (amo === 0) {
+				return
+			}
+		}
+	}
+
 	$('.arsenal-container .focus-on-hover').removeClass('selected').css({
 		'box-shadow': 'initial'
 	})
