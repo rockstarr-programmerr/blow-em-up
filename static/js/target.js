@@ -210,11 +210,13 @@ function Target(name, health, destroyStatus) {
 			$('.dust-cloud-' + this.name).fadeIn(1000).delay(500).fadeOut(1000);
 			if (this === workplace) {
 				setTimeout(function() {
-					document.querySelector('.workplace-img-container').style.cssText = "background-image: url('static/img/workplace-ruin.png'); background-size: 100%;";
+					$('#workplace-img').hide();
+					$('.ruin-workplace img').fadeIn(1000);
 				}, 1400);	
 			} else if (this === school) {
 				setTimeout(function() {
-					document.querySelector('.school-img-container').style.cssText = "background-image: url('static/img/school-ruin.png'); background-size: 100%;";
+					$('#school-img').hide();
+					$('.ruin-school img').fadeIn(1000);
 				}, 1400);	
 			}
 		} else if (this.health < 2000) {
@@ -249,8 +251,8 @@ function Target(name, health, destroyStatus) {
 	}
 }
 
-let school = new Target('school', 10000, false);
-let workplace = new Target('workplace', 12000, false);
+let school = new Target('school', 12000, false);
+let workplace = new Target('workplace', 10000, false);
 
 // Delay executing the functions so that the animation can be completed before the function's result show up
 let timedAttack;

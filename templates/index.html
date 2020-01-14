@@ -60,6 +60,7 @@
     </div>
     <!-- Start game screen -->
     <div id="before-start-game-screen" class="before-start font-weight-bold">
+      <img class="result-background-img" src="{% static 'img/result-background.jpg' %}" alt="result background">
       <p class="text-center">Blow up your school <br> (and your office too if you have job)</p>
       <p class="start-game-rule">- A game by <a href="https://www.facebook.com/bophelenmen" target="_blank" style="color: #2F4F4F;">Tthe Ttruth</a> -</p>
       <p style="display: block; width: 100%; padding: 20px 20px 0 0; font-size: 20px; text-align: center; line-height: 26px;"></p>
@@ -67,6 +68,7 @@
     </div>
 
     <div id="start-game-screen" class="result font-weight-bold">
+      <img class="result-background-img" src="{% static 'img/result-background.jpg' %}" alt="result background">
       <p>Welcome comrade !</p>
       <p class="start-game-rule">
         Are you tired of your teachers?
@@ -99,11 +101,25 @@
       <div class="workplace-container">
         <div class="workplace-animation"></div>
         <div class="workplace-img-container">
-          <div class="burning-1-workplace"></div>
-          <div class="burning-2-workplace"></div>
-          <div class="burning-3-workplace"></div>
-          <div class="base-fire-workplace"></div>
-          <div class="dust-cloud-workplace"></div>
+          <img id="workplace-img" src="{% static 'img/targets/office.png' %}" alt="workplace">
+          <div class="burning-1-workplace">
+            <img src="{% static 'img/animation/burning-1.gif' %}" alt="burning">
+          </div>
+          <div class="burning-2-workplace">
+            <img src="{% static 'img/animation/burning-1.gif' %}" alt="burning">
+          </div>
+          <div class="burning-3-workplace">
+            <img src="{% static 'img/animation/burning-1.gif' %}" alt="burning">
+          </div>
+          <div class="base-fire-workplace">
+            <img src="{% static 'img/animation/base-fire.gif' %}" alt="base fire">
+          </div>
+          <div class="dust-cloud-workplace">
+            <img src="{% static 'img/animation/dust-cloud.png' %}" alt="dust cloud">
+          </div>
+          <div class="ruin-workplace">
+            <img src="{% static 'img/workplace-ruin.png' %}" alt="workplace ruin">
+          </div>
         </div>
         <div class="workplace-stats text-center">
           <p style="line-height: 26px; font-family: arial, font-size: 16px; color: #fff;">Workplace <br> Health: <span id="workplace-health">10.000</span>&nbsp;HP</p>
@@ -113,11 +129,25 @@
       <div class="school-container">
         <div class="school-animation"></div>
         <div class="school-img-container">
-          <div class="burning-1-school"></div>
-          <div class="burning-2-school"></div>
-          <div class="burning-3-school"></div>
-          <div class="base-fire-school"></div>
-          <div class="dust-cloud-school"></div>
+          <img id="school-img" src="{% static 'img/targets/school.png' %}" alt="school">
+          <div class="burning-1-school">
+            <img src="{% static 'img/animation/burning-1.gif' %}" alt="burning">
+          </div>
+          <div class="burning-2-school">
+            <img src="{% static 'img/animation/burning-1.gif' %}" alt="burning">
+          </div>
+          <div class="burning-3-school">
+            <img src="{% static 'img/animation/burning-1.gif' %}" alt="burning">
+          </div>
+          <div class="base-fire-school">
+            <img src="{% static 'img/animation/base-fire.gif' %}" alt="base fire">
+          </div>
+          <div class="dust-cloud-school">
+            <img src="{% static 'img/animation/dust-cloud.png' %}" alt="dust cloud">
+          </div>
+          <div class="ruin-school">
+            <img src="{% static 'img/school-ruin.png' %}" alt="school ruin">
+          </div>
         </div>
         <div class="school-stats text-center">
           <p style="line-height: 26px; font-family: arial, font-size: 16px; color: #fff;">School <br> Health: <span id="school-health">12.000</span>&nbsp;HP</p>
@@ -134,7 +164,9 @@
           <p style="line-height: 80px; font-family: arial, font-size: 16px; color: #fff;">No money, no weapon...</p>
         </div>
         <div class="store-ak47 focus-on-hover">
-          <div class="store-ak47-img"></div>
+          <div class="store-ak47-img">
+            <img src="{% static 'img/weapons/ak47.png' %}" alt="ak47">
+          </div>
           <div class="store-ak47-stats">
             <div class="store-stats">
               <p>Name: &emsp; &emsp; <em>AK47</em></p>
@@ -146,7 +178,9 @@
           </div>
         </div>
         <div class="store-dragunov focus-on-hover">
-          <div class="store-dragunov-img"></div>
+          <div class="store-dragunov-img">
+            <img src="{% static 'img/weapons/dragunov.png' %}" alt="dragunov">
+          </div>
           <div class="store-dragunov-stats">
             <div class="store-stats">
               <p>Name: &emsp; &ensp; <em>Dragunov</em></p>
@@ -158,7 +192,9 @@
           </div>
         </div>
         <div class="store-mp5 focus-on-hover">
-          <div class="store-mp5-img"></div>
+          <div class="store-mp5-img">
+            <img src="{% static 'img/weapons/mp5.png' %}" alt="mp5">
+          </div>
           <div class="store-mp5-stats">
             <div class="store-stats">
               <p>Name: <em>Western spy's gun</em></p>
@@ -170,7 +206,9 @@
           </div>
         </div>
         <div class="store-rpg focus-on-hover">
-          <div class="store-rpg-img"></div>
+          <div class="store-rpg-img">
+            <img src="{% static 'img/weapons/rpg.png' %}" alt="rpg">
+          </div>
           <div class="store-rpg-stats">
             <div class="store-stats">
               <p>Name:  &emsp; <em>Russian RPG</em></p>
@@ -182,7 +220,9 @@
           </div>
         </div>
         <div class="store-tomahawk focus-on-hover">
-          <div class="store-tomahawk-img"></div>
+          <div class="store-tomahawk-img">
+            <img src="{% static 'img/weapons/tomahawk.png' %}" alt="tomahawk">
+          </div>
           <div class="store-tomahawk-stats">
             <div class="store-stats">
               <p>Name: <em>Tomahawk missile</em></p>
@@ -200,7 +240,9 @@
 
       <!-- Player section -->
       <div class="player-container">
-        <div class="player-img"></div>
+        <div class="player-img">
+          <img src="{% static 'img/you.png' %}" alt="you">
+        </div>
         <div class="player-name text-center"><p style="line-height: 75px; color: #fff; font-size: 16px; font-family: arial;"><b>You</b></p></div>
         <div class="player-budget text-center"><p class="player-available-budget" style="line-height: 75px; color: #fff; font-size: 16px; font-family: arial;">Your budget: $70.000</p></div>
       </div>
@@ -246,38 +288,70 @@
       <div class="rpg-bullet"></div>
       <div class="tomahawk-bullet"></div>
 
-      <div class="fire-ball-workplace-1"></div>
-      <div class="fire-ball-workplace-2"></div>
-      <div class="fire-ball-workplace-3"></div>
+      <div class="fire-ball-workplace-1">
+        <img src="{% static 'img/animation/fireball.png' %}" alt="">
+      </div>
+      <div class="fire-ball-workplace-2">
+        <img src="{% static 'img/animation/fireball.png' %}" alt="fireball">
+      </div>
+      <div class="fire-ball-workplace-3">
+        <img src="{% static 'img/animation/fireball.png' %}" alt="fireball">
+      </div>
 
-      <div class="fire-ball-school-1"></div>
-      <div class="fire-ball-school-2"></div>
-      <div class="fire-ball-school-3"></div>
+      <div class="fire-ball-school-1">
+        <img src="{% static 'img/animation/fireball.png' %}" alt="fireball">
+      </div>
+      <div class="fire-ball-school-2">
+        <img src="{% static 'img/animation/fireball.png' %}" alt="fireball">
+      </div>
+      <div class="fire-ball-school-3">
+        <img src="{% static 'img/animation/fireball.png' %}" alt="fireball">
+      </div>
 
-      <div class="big-explosion-workplace"></div>
-      <div class="big-explosion-school"></div>
-      <div class="nuclear-explosion-workplace"></div>
-      <div class="nuclear-explosion-school"></div>
+      <div class="big-explosion-workplace">
+        <img src="{% static 'img/animation/big-explosion.png' %}" alt="big-explosion">
+      </div>
+      <div class="big-explosion-school">
+        <img src="{% static 'img/animation/big-explosion.png' %}" alt="big-explosion">
+      </div>
+      <div class="nuclear-explosion-workplace">
+        <img src="{% static 'img/animation/nuclear-explosion.png' %}" alt="nuclear-explosion">
+      </div>
+      <div class="nuclear-explosion-school">
+        <img src="{% static 'img/animation/nuclear-explosion.png' %}" alt="nuclear-explosion">
+      </div>
 
     </div>
     
     <!-- Win/lose status box -->
     <div id="game-container-block"></div>
+
     <div id="result-fake-win" class="result text-center font-weight-bold">
+      <img class="result-background-img" src="{% static 'img/result-background.jpg' %}" alt="result-background">
       <p> All target destroyed, but you still lose anyway...</p>
-      <div class="result-img result-img-fake-win"></div>
+      <div class="result-img result-img-fake-win">
+        <img src="{% static 'img/sad-face-fake-win.png' %}" alt="sad-face-fake-win">
+      </div>
       <div class="play-again-btn"><a href="">Play again</a></div>
     </div>
+
     <div id="result-lose" class="result text-center font-weight-bold" style="font-size: 35px;">
+      <img class="result-background-img" src="{% static 'img/result-background.jpg' %}" alt="result-background">
       <p> You've ran out of all amunitions. Game over!</p>
-      <div class="result-img result-img-lose"></div>
+      <div class="result-img result-img-lose">
+        <img src="{% static 'img/sad-face-lose.png' %}" alt="sad-face-l">
+      </div>
       <div class="play-again-btn"><a href="">Play again</a></div>
     </div>
+
     <div id="result-real-win" class="result text-center font-weight-bold">
+      <img class="result-background-img" src="{% static 'img/result-background.jpg' %}" alt="result-background">
       <p>YOU WON !!</p>
       <p id="real-win-congratulation">If you look into here to find the solution for the game, go away. Play it the right way, have fun, don't cheat.</p>
       <p style="display: block; width: 100%; padding: 20px 20px 0 0; font-size: 20px; text-align: right; line-height: 26px;">See you next time!<br>- A game by <a href="https://www.facebook.com/bophelenmen" target="_blank" style="color: #2F4F4F; text-decoration: none;">Tthe Ttruth</a> -</p>
-      <div class="result-img result-img-real-win"></div>
+      <div class="result-img result-img-real-win">
+        <img id="real-win-result-img" src="{% static 'img/happy-face-real-win.png' %}" alt="happy-face-real-win">
+      </div>
       <div class="play-again-btn"><a href="">Play again</a></div>
     </div>
 

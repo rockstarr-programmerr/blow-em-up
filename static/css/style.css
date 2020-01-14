@@ -37,28 +37,17 @@ body {
 	z-index: 2;
 }
 
-.workplace-img-container {
+.workplace-img-container, .school-img-container {
 	display: block;
 	width: 100%;
-	height: 150px;/*
-	border: 1px solid #fff;*/
-	background-image: url('../img/targets/office.png');
-	background-size: 75%;
-	background-repeat: no-repeat;
-	background-position: center;
+	height: 150px;
 	cursor: pointer;
 }
 
-.school-img-container {
+.workplace-img-container img, .school-img-container img {
 	display: block;
-	width: 100%;
-	height: 150px;/*
-	border: 1px solid #fff;*/
-	background-image: url('../img/targets/school.png');
-	background-size: 75%;
-	background-repeat: no-repeat;
-	background-position: center;
-	cursor: pointer; 
+	height: 100%;
+	margin: 0 auto;
 }
 
 .workplace-stats, .school-stats {
@@ -128,26 +117,10 @@ body {
 	background-position: center; 
 }
 
-.store-ak47-img {
-	background-image: url('../img/weapons/ak47.png');
-}
-
-.store-dragunov-img {
-	background-image: url('../img/weapons/dragunov.png');
-}
-
-.store-mp5-img {
-	background-image: url('../img/weapons/mp5.png');
-	background-size: 80%;
-}
-
-.store-rpg-img {
-	background-image: url('../img/weapons/rpg.png');
-}
-
-.store-tomahawk-img {
-	background-image: url('../img/weapons/tomahawk.png');
-	background-size: 70%;
+div[class^="store-"] img {
+	height: 100%;
+	display: block;
+	margin: 0 auto;
 }
 
 /* ===================================================== */
@@ -255,12 +228,10 @@ body {
 	border: 1px solid #fff;
 }
 
-.player-img {
-	left: 0;
-	background-image: url('../img/you.png');
-	background-size: 70%;
-	background-position: center;
-	background-repeat: no-repeat;
+.player-img img{
+	height: 100%;
+	display: block;
+	margin: 0 auto;
 }
 
 .player-name {
@@ -302,13 +273,21 @@ body {
 	top: 0;
 	border-radius: 10px;
 	z-index: 20;
-	background-image: url(../img/result-background.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 	color: #2F4F4F;
 	font-size: 40px;
 	line-height: 50px;
+}
+
+.result-background-img {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	z-index: 0;
+	border-radius: 6px;
+}
+
+.before-start p {
+	z-index: 1;
 }
 
 #start-game-screen, #before-start-game-screen {
@@ -338,13 +317,13 @@ body {
 	top: 150px;
 	border-radius: 10px;
 	z-index: 20;
-	background-image: url(../img/result-background.jpg);
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
 	color: #2F4F4F;
 	font-size: 40px;
 	line-height: 50px;
+}
+
+.result p {
+	z-index: 1;
 }
 
 #result-lose, #result-fake-win, #result-real-win {
@@ -373,20 +352,14 @@ body {
 	background-repeat: no-repeat;
 }
 
-.result-img-fake-win {
-	background-image: url(../img/sad-face-fake-win.png);
+.result-img img {
+	height: 100%;
+	z-index: 2;
 }
 
-.result-img-lose {
-	background-image: url(../img/sad-face-lose.png);
-}
-
-.result-img-real-win {
-	margin-top: 0;
+#real-win-result-img {
 	position: relative;
-	right: 180px;
-	background-image: url(../img/happy-face-real-win.png);
-	background-size: contain;
+	left: -175px;
 }
 
 .play-again-btn {
@@ -506,23 +479,29 @@ body {
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	background-image: url(../img/animation/fireball.png);
-	background-size: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
 	z-index: 10;
 }
 
+.fire-ball-workplace-1 img, .fire-ball-workplace-2 img, .fire-ball-workplace-3 img, .fire-ball-school-1 img, .fire-ball-school-2 img, .fire-ball-school-3 img, .big-explosion-workplace img, .big-explosion-school img, .nuclear-explosion-workplace img, .nuclear-explosion-school img {
+	height: 100%;
+}
+
 .big-explosion-workplace, .big-explosion-school {
-	background-image: url(../img/animation/big-explosion.png);
 	width: 120px;
 	height: 120px;
 }
 
+.big-explosion-workplace img, .big-explosion-school img {
+	height: 100%;
+}
+
 .nuclear-explosion-workplace, .nuclear-explosion-school {
-	background-image: url(../img/animation/nuclear-explosion.png);
 	width: 180px;
 	height: 180px;
+}
+
+.nuclear-explosion-workplace img, .nuclear-explosion-school img {
+	height: 100%;
 }
 
 .big-explosion-workplace {
@@ -582,11 +561,11 @@ body {
 	position: absolute;
 	width: 80px;
 	height: 80px;
-	background-image: url(../img/animation/burning-1.gif);
-	background-size: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
 	z-index: 10;
+}
+
+.burning-1-workplace img, .burning-2-workplace img, .burning-3-workplace img, .base-fire-workplace img, .burning-1-school img, .burning-2-school img, .burning-3-school img, .base-fire-school img {
+	height: 100%;
 }
 
 .burning-1-workplace {
@@ -605,12 +584,14 @@ body {
 }
 
 .base-fire-workplace {
-	background-image: url(../img/animation/base-fire.gif);
-	background-size: 100%;
 	width: 130px;
 	height: 130px;
 	top: 25px;
 	left: 35px;
+}
+
+.base-fire-workplace img {
+	height: 100%;
 }
 
 .burning-1-school {
@@ -629,12 +610,14 @@ body {
 }
 
 .base-fire-school {
-	background-image: url(../img/animation/base-fire.gif);
-	background-size: 100%;
 	width: 140px;
 	height: 140px;
 	top: 20px;
 	left: 30px;
+}
+
+.base-fire-school img {
+	height: 100%;
 }
 
 .dust-cloud-workplace, .dust-cloud-school {
@@ -644,11 +627,13 @@ body {
 	left: -40px;
 	width: 160%;
 	height: 160%;
-	background-image: url(../img/animation/dust-cloud.png);
-	background-size: 100%;
-	background-position: center;
-	background-repeat: no-repeat;
 	z-index: 10;
+}
+
+.dust-cloud-workplace img, .dust-cloud-school img {
+	height: 100%;
+	position: relative;
+	left: -50px;
 }
 
 .dust-cloud-school {
@@ -677,3 +662,12 @@ body {
 	color: #2F4F4F;
 }
 
+.ruin-workplace, .ruin-school {
+	height: 100%;
+}
+
+.ruin-workplace img, .ruin-school img {
+	display: none;
+	width: 100%;
+	height: 100%;
+}
