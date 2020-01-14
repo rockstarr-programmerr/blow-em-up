@@ -74,7 +74,7 @@ function Weapon(name, objectName, damage, originalAmo, amo, accuracy, price, img
 
 let ak47 = new Weapon('AK47', 'ak47', 400, 7, 7, 80, 5000, 'static/img/weapons/ak47.png', 300);
 let dragunov = new Weapon('Dragunov', 'dragunov', 600, 5, 5, 75, 7500, 'static/img/weapons/dragunov.png', 600);
-let mp5 = new Weapon("American spy's gun", 'mp5', 200, 2, 2, 95, 3000, 'static/img/weapons/mp5.png', 300);
+let mp5 = new Weapon("American spy's gun", 'mp5', 200, 10, 10, 95, 3000, 'static/img/weapons/mp5.png', 300);
 let rpg = new Weapon('Russian RPG', 'rpg', 1000, 4, 4, 80, 9000, 'static/img/weapons/rpg.png', 2000);
 let tomahawk = new Weapon('Tomahawk missile', 'tomahawk', 2000, 2, 2, 70, 10000, 'static/img/weapons/tomahawk.png', 7000);
 
